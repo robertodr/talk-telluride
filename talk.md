@@ -10,10 +10,10 @@ class: center, middle, inverse
 
 .institution[Department of Chemistry - Virginia Tech]
 
-.date[1 April 2019, Orlando]
+.date[13 June 2019, Telluride]
 
 .footnote[[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) licensed.
-Browse slides at [http://tinyurl.com/talk-orlando](http://tinyurl.com/talk-orlando)]
+Browse slides at [http://tinyurl.com/talk-telluride](http://tinyurl.com/talk-telluride)]
 
 ???
 
@@ -169,7 +169,7 @@ parselglossy parse input.inp --template template.yml --outfile fr.json
 ---
 layout: false
 
-## Tokenization: how _any_ correct input _looks_ 
+## Tokenization: how _any_ correct input _looks_
 
 <p style="text-align:center;"><img src="images/tokenization.png" style="width: 100%;"/></p>
 <p style="clear: both;">
@@ -209,7 +209,7 @@ layout: false
 
 - A library for input parsing
 - Separation of syntax and semantics
-- Allows composable parsers 
+- Allows composable parsers
 - Automatic generation of documentation
 
 ```
@@ -256,9 +256,9 @@ template: inverse
 
 Slideshow created using [remark] and served using [cicero]
 
-Slides available on [GitHub](https://github.com/robertodr/talk-acs)
+Slides available on [GitHub](https://github.com/robertodr/talk-telluride)
 
-Browse slides at [http://tinyurl.com/talk-orlando](http://tinyurl.com/talk-orlando)
+Browse slides at [http://tinyurl.com/talk-telluride](http://tinyurl.com/talk-telluride)
 
 [remark]: https://github.com/gnab/remark
 [cicero]: https://github.com/bast/cicero
