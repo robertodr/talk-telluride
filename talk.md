@@ -2,7 +2,7 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-## Reusable Components for Quantum Chemistry Software
+## Coupled Cluster diagrams using Monte Carlo
 
 .author[Roberto Di Remigio]
 
@@ -17,62 +17,136 @@ Browse slides at [http://tinyurl.com/talk-telluride](http://tinyurl.com/talk-tel
 
 ???
 
-I will present very recent efforts in designing and implementing a library for
-input parsing that can be reused by different programs with minimal effort.
-The library allows combination of different input formats and enforces sane
-defaults, type checking, and documentation.
-We achieve this with a strict separation between tokenization and validation.
-
----
-
-layout: false
-
-## Software Grows Complex Over Time.red[<sup>1</sup>]
-
-_"The complexity of software is an essential property, not an accidental one."_.red[<sup>2</sup>]
-
-<p style="text-align:center;"><img src="images/complex-machine.jpg" style="width: 30%"></p>
-<p style="clear: both;">
-
-.footnote-cite[.red[<sup>1</sup>] Hatton, L. _IEEE Trans. Software Eng._ (2014), **40**, 450
-
-.red[<sup>2</sup>] Brooks, F. P., Jr. [_The Mythical Man-Month: Essays on Software Engineering_](http://worrydream.com/refs/Brooks-NoSilverBullet.pdf), Addison-Wesley Professional, 1995]
-
-???
-
-- We start with a simple idea and overtime software grows complex
-- It is inherent characteristic of software to change and grow over time
-- There is no silver bullet for managing complexity. However, there are some bad practices that we can avoid.
-
----
-
-## Composition
-
-- Build complex behavior from simple components
-- We can reason about the components and the composite
-- Composition is key to managing complexity
-- Modularity does not imply simplicity, but is enabled by it
-
-<img src="images/knit_vs_lego.jpg" style="width: 100%;"/>
-
-
-.footnote-cite[Slide taken from [Complexity in software development by Jonas Juselius](https://github.com/scisoft/complexity)]
-
 ---
 layout: false
 
 ## Extensible
-### New Challenges! New Methods! New Software?!?
 
-<p style="text-align:center;"><img src="images/yoda-future-once.gif" style="width: 100%;"/></p>
+<p style="text-align:left;"><img src="images/diagccmc/frame00.png" style="width: 110%;"/></p>
 <p style="clear: both;">
 
 ???
 
-- New modelling challenges require new (or improved) methods and new (or
-  improved) software implementations.
-- Software cannot be rewritten from scratch every time, we need to have
-  _extensible_ architectures
+---
+count: false
+layout: false
+
+## Extensible
+
+<p style="text-align:left;"><img src="images/diagccmc/frame01.png" style="width: 110%;"/></p>
+<p style="clear: both;">
+
+???
+
+---
+count: false
+layout: false
+
+## Extensible
+
+<p style="text-align:left;"><img src="images/diagccmc/frame02.png" style="width: 110%;"/></p>
+<p style="clear: both;">
+
+???
+
+---
+count: false
+layout: false
+
+## Extensible
+
+<p style="text-align:left;"><img src="images/diagccmc/frame03.png" style="width: 110%;"/></p>
+<p style="clear: both;">
+
+???
+
+---
+count: false
+layout: false
+
+## Extensible
+
+<p style="text-align:left;"><img src="images/diagccmc/frame04.png" style="width: 110%;"/></p>
+<p style="clear: both;">
+
+???
+
+---
+count: false
+layout: false
+
+## Extensible
+
+<p style="text-align:left;"><img src="images/diagccmc/frame05.png" style="width: 110%;"/></p>
+<p style="clear: both;">
+
+???
+
+---
+count: false
+layout: false
+
+## Extensible
+
+<p style="text-align:left;"><img src="images/diagccmc/frame06.png" style="width: 110%;"/></p>
+<p style="clear: both;">
+
+???
+
+---
+count: false
+layout: false
+
+## Extensible
+
+<p style="text-align:left;"><img src="images/diagccmc/frame07.png" style="width: 110%;"/></p>
+<p style="clear: both;">
+
+???
+
+---
+count: false
+layout: false
+
+## Extensible
+
+<p style="text-align:left;"><img src="images/diagccmc/frame08.png" style="width: 110%;"/></p>
+<p style="clear: both;">
+
+???
+
+---
+count: false
+layout: false
+
+## Extensible
+
+<p style="text-align:left;"><img src="images/diagccmc/frame09.png" style="width: 110%;"/></p>
+<p style="clear: both;">
+
+???
+
+---
+count: false
+layout: false
+
+## Extensible
+
+<p style="text-align:left;"><img src="images/diagccmc/frame10.png" style="width: 110%;"/></p>
+<p style="clear: both;">
+
+???
+
+---
+count: false
+layout: false
+
+## Extensible
+
+<p style="text-align:left;"><img src="images/diagccmc/frame11.png" style="width: 110%;"/></p>
+<p style="clear: both;">
+
+???
 
 ---
 layout: false
