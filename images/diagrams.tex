@@ -1,0 +1,223 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+% For diagrams: https://github.com/avcopan/styfiles/blob/master/goldstone.sty
+\usepackage[scale=1.1]{goldstone} % option [scale=<0.9, 1.1, ...>] (default is 0.85)
+
+\usepackage{simplewick}
+
+\begin{document}
+
+\begin{equation*}
+  F =
+  \diagram{
+    \draw (-0.5,0) node[circlex] (f) {} -- (0,0) node[ddot=white] (f1) {};
+    \draw[->-] (f1) to node[right] {} ++(0,+0.5);
+    \draw[-<-] (f1) to node[right] {} ++(0,-0.5);
+  }
+  +
+  \diagram{
+    \draw (-0.5,0) node[circlex] (f) {} -- (0,0) node[ddot=white] (f1) {};
+    \draw[-<-] (f1) to node[right] {} ++(0,+0.5);
+    \draw[->-] (f1) to node[right] {} ++(0,-0.5);
+  }
+  +
+  \diagram{
+    \draw (-0.5,0) node[circlex] (f) {} -- (0,0) node[ddot=white] (f1) {};
+    \draw[->-] (f1) to node[left] {} ++(-0.25,-0.5);
+    \draw[-<-] (f1) to node[right] {} ++(0.25,-0.5);
+  }
+  +
+  \diagram{
+    \draw (-0.5,0) node[circlex] (f) {} -- (0,0) node[ddot=white] (f1) {};
+    \draw[-<-] (f1) to node[left] {} ++(-0.25,0.5);
+    \draw[->-] (f1) to node[right] {} ++(0.25,0.5);
+  }
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \Phi  
+    &=
+    \diagram{
+      \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
+      \draw[->-] (g1) to node[left] {} ++(0,+0.5);
+      \draw[-<-] (g1) to node[left] {}++(0,-0.5);
+      \draw[->-] (g2) to node[left] {}++(0,+0.5);
+      \draw[-<-] (g2) to node[left] {}++(0,-0.5);
+    }
+    + 
+    \diagram{
+      \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
+      \draw[-<-] (g1) to node[left] {} ++(0,+0.5);
+      \draw[->-] (g1) to node[left] {}++(0,-0.5);
+      \draw[-<-] (g2) to node[left] {}++(0,+0.5);
+      \draw[->-] (g2) to node[left] {}++(0,-0.5);
+    }
+    +
+    \diagram{
+      \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
+      \draw[->-] (g1) to node[left] {} ++(0,+0.5);
+      \draw[-<-] (g1) to node[left] {}++(0,-0.5);
+      \draw[-<-] (g2) to node[left] {}++(0,+0.5);
+      \draw[->-] (g2) to node[left] {}++(0,-0.5);
+    } \\
+    &+ 
+    \diagram{
+      \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
+      \draw[->-] (g1) to node[left] {} ++(0,+0.5);
+      \draw[-<-] (g1) to node[left] {}++(0,-0.5);
+      \draw[-<-] (g2) to node[left] {}++(-0.25,+0.5);
+      \draw[->-] (g2) to node[right] {}++(0.25,+0.5);
+    } 
+    +
+    \diagram{
+      \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
+      \draw[-<-] (g1) to node[left] {} ++(0,+0.5);
+      \draw[->-] (g1) to node[left] {}++(0,-0.5);
+      \draw[-<-] (g2) to node[left] {}++(-0.25,+0.5);
+      \draw[->-] (g2) to node[right] {}++(0.25,+0.5);
+    }
+    +
+    \diagram{
+      \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
+      \draw[->-] (g1) to node[left] {} ++(0,+0.5);
+      \draw[-<-] (g1) to node[left] {}++(0,-0.5);
+      \draw[->-] (g2) to node[left] {}++(-0.25,-0.5);
+      \draw[-<-] (g2) to node[right] {}++(0.25,-0.5);
+    } \\
+    &+
+    \diagram{
+      \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
+      \draw[-<-] (g1) to node[left] {} ++(0,+0.5);
+      \draw[->-] (g1) to node[left] {}++(0,-0.5);
+      \draw[->-] (g2) to node[left] {}++(-0.25,-0.5);
+      \draw[-<-] (g2) to node[right] {}++(0.25,-0.5);
+    }
+    +
+    \diagram{
+      \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
+      \draw[->-] (g1) to node[left] {} ++(-0.25,-0.5);
+      \draw[-<-] (g1) to node[right] {}++(0.25,-0.5);
+      \draw[->-] (g2) to node[left] {}++(-0.25,-0.5);
+      \draw[-<-] (g2) to node[right] {}++(0.25,-0.5);
+    }
+    +
+    \diagram{
+      \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
+      \draw[-<-] (g1) to node[left] {} ++(-0.25,0.5);
+      \draw[->-] (g1) to node[right] {}++(0.25,0.5);
+      \draw[-<-] (g2) to node[left] {}++(-0.25,0.5);
+      \draw[->-] (g2) to node[right] {}++(0.25,0.5);
+    }
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  T_{1} =
+  \diagram{
+    \interaction{1}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+  }
+\end{equation*}
+
+\begin{equation*}
+  T_{2} =
+  \diagram{
+    \interaction{2}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta2) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta2) to node[right] {} ++(0.25, 1.0);
+  }
+\end{equation*}
+
+\begin{equation*}
+  T_{3} =
+  \diagram{
+    \interaction{3}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta2) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta2) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta3) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta3) to node[right] {} ++(0.25, 1.0);
+  }
+\end{equation*}
+
+\begin{equation*}
+  \contraction{}{F}{}{T_{1}}
+  FT_{1}
+  =
+  \diagram{
+    \interaction{1}{ta}{(-0.25, -0.5)}{ddot}{overhang};
+    \draw[-<-, semithick] (ta1) to node[left] {} ++(-0.5, 1.0);
+    \draw (0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[->-, semithick] (ta1) to (f1) {};
+    \draw[->-, semithick] (f1) to node[left] {} ++(-0.25, 0.5);
+  }
+  +
+  \diagram{
+    \interaction{1}{ta}{(0.25, -0.5)}{ddot}{overhang};
+    \draw[->-, semithick] (ta1) to node[right] {} ++(+0.5, 1.0);
+    \draw (-0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[-<-, semithick] (ta1) to (f1) {};
+    \draw[-<-, semithick] (f1) to node[left] {} ++(0.25, 0.5);
+  }
+  +
+  \diagram{
+    \interaction{1}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw (0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[-<-, bend left] (ta1) to (f1) {};
+    \draw[->-, bend right] (ta1) to (f1) {};
+  }
+  +
+  \diagram{
+    \interaction{1}{ta}{(-0.25, -0.5)}{ddot}{overhang};
+    \draw[-<-, semithick] (ta1) to node[left] {} ++(-0.5, 1.0);
+    \draw (0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[->-, semithick] (ta1) to (f1) {};
+    \draw[->-, semithick] (f1) to node[right] {} ++(+0.25, -0.5);
+  }
+  +
+  \diagram{
+    \interaction{1}{ta}{(0.25, -0.5)}{ddot}{overhang};
+    \draw[->-, semithick] (ta1) to node[right] {} ++(+0.5, 1.0);
+    \draw (-0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[-<-, semithick] (ta1) to (f1) {};
+    \draw[-<-, semithick] (f1) to node[left] {} ++(-0.25, -0.5);
+  }
+\end{equation*}
+
+\begin{equation*}
+\diagram{
+  \interaction{3}{ta}{(0, -0.5)}{ddot}{overhang};
+  \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+  \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+  \draw[->-] (ta2) to node[left] {} ++(-0.25, 1.0);
+  \draw[-<-] (ta2) to node[right] {} ++(0.25, 1.0);
+  \draw[->-] (ta3) to node[left] {} ++(-0.25, 1.0);
+  \draw[-<-] (ta3) to node[right] {} ++(0.25, 1.0);
+}
+  \longleftarrow
+\diagram{
+  \interaction{1}{ta}{(0, -0.5)}{ddot}{overhang};
+  \interaction{1}{tb}{(1, -0.5)}{ddot}{overhang};
+  \interaction{3}{tc}{(2, -0.5)}{ddot}{overhang};
+  \draw[flexdotted] (0.5, 0.0) node[ddot=white] (g1) {} to (2, 0.0) node[ddot=white] (g2) {};
+  \draw[semithick, -<-] (ta1) to node[left] {} ++(-0.25, 1.0);
+  \draw[semithick, ->-] (ta1) to node[left] {} (g1);                                                   
+  \draw[semithick, ->-] (tb1) to node[right] {} ++(0.25, 1.0);
+  \draw[semithick, -<-] (tb1) to node[right] {} (g1);                                                   
+  \draw[semithick, bend left, -<-] (tc1) to node[right] {} (g2);  
+  \draw[semithick, bend right, ->-] (tc1) to node[right] {} (g2);  
+  \draw[semithick, ->-] (tc2) to node[right] {} ++(0.25, 1.0);  
+  \draw[semithick, -<-] (tc2) to node[right] {} ++(-0.25, 1.0);  
+  \draw[semithick, ->-] (tc3) to node[right] {} ++(0.25, 1.0);  
+  \draw[semithick, -<-] (tc3) to node[right] {} ++(-0.25, 1.0);  
+}
+\end{equation*}
+
+\end{document}

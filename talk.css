@@ -1,79 +1,33 @@
-.footnote {
-  position: absolute;
-  bottom: 3em;
+h1 {
+  color: #4a235a;
 }
-li p { line-height: 1.25em; }
-.red { color: #fa0000; }
-.large { font-size: 2em; }
-a, a > code {
-  color: rgb(249, 38, 114);
-  text-decoration: none;
+
+h2 {
+  color: #6c3483;
 }
-code {
-  background: #e7e8e2;
-  border-radius: 5px;
+
+h3 {
+  color: #8e44ad;
 }
-.pull-left {
-  float: left;
-  width: 47%;
+
+a {
+  color: #3498db;
 }
-.pull-right {
-  float: right;
-  width: 47%;
-}
-.pull-right ~ p {
-  clear: both;
-}
-#slideshow .slide .content code {
-  font-size: 0.8em;
-}
-#slideshow .slide .content pre code {
-  font-size: 0.9em;
-  padding: 15px;
-}
+
 .inverse {
   background: #272822;
   color: #777872;
-  text-shadow: 0 0 20px #333;
 }
+
 .inverse h1, .inverse h2 {
-  color: #f3f3f3;
+  color: #a3e4d7;
   line-height: 0.8em;
 }
-/* Slide-specific styling */
-#slide-inverse .footnote {
-  bottom: 12px;
-  left: 20px;
+
+.background h1 {
+  color: #e8daef;
 }
-#slide-how .slides {
-  font-size: 0.9em;
-  position: absolute;
-  top:  151px;
-  right: 140px;
-}
-#slide-how .slides h3 {
-  margin-top: 0.2em;
-}
-#slide-how .slides .first, #slide-how .slides .second {
-  padding: 1px 20px;
-  height: 90px;
-  width: 120px;
-  -moz-box-shadow: 0 0 10px #777;
-  -webkit-box-shadow: 0 0 10px #777;
-  box-shadow: 0 0 10px #777;
-}
-#slide-how .slides .first {
-  background: #fff;
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  z-index: 1;
-}
-#slide-how .slides .second {
-  position: relative;
-  background: #fff;
-  z-index: 0;
-}
+
 /* Two-column layout */
 .left-column {
   color: #777;
@@ -88,48 +42,6 @@ code {
   width: 75%;
   float: right;
   padding-top: 1em;
-}
-
-.blue {
-    color: #0000ff;
-}
-
-/* two-column layout with different splits */
-.column:first-of-type {
-    float: left;
-}
-.column:last-of-type {
-    float: right;
-}
-.split-30-70 .column:first-of-type {
-    width: 30%;
-}
-.split-30-70 .column:last-of-type {
-    width: 70%;
-}
-.split-40-60 .column:first-of-type {
-    width: 40%;
-}
-.split-40-60 .column:last-of-type {
-    width: 60%;
-}
-.split-50-50 .column:first-of-type {
-    width: 50%;
-}
-.split-50-50 .column:last-of-type {
-    width: 50%;
-}
-.split-60-40 .column:first-of-type {
-    width: 60%;
-}
-.split-60-40 .column:last-of-type {
-    width: 40%;
-}
-.split-70-30 .column:first-of-type {
-    width: 70%;
-}
-.split-70-30 .column:last-of-type {
-    width: 30%;
 }
 
 /* some special classes */
@@ -185,4 +97,54 @@ code {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+/* two-column layout with different splits */
+.column:first-of-type {
+    float: left;
+}
+.column:last-of-type {
+    float: right;
+}
+.split-30-70 .column:first-of-type {
+    width: 30%;
+}
+.split-30-70 .column:last-of-type {
+    width: 70%;
+}
+.split-40-60 .column:first-of-type {
+    width: 40%;
+}
+.split-40-60 .column:last-of-type {
+    width: 60%;
+}
+.split-50-50 .column:first-of-type {
+    width: 50%;
+}
+.split-50-50 .column:last-of-type {
+    width: 50%;
+}
+.split-60-40 .column:first-of-type {
+    width: 60%;
+}
+.split-60-40 .column:last-of-type {
+    width: 40%;
+}
+.split-70-30 .column:first-of-type {
+    width: 70%;
+}
+.split-70-30 .column:last-of-type {
+    width: 30%;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }

@@ -20,12 +20,19 @@ Browse slides at [http://tinyurl.com/talk-telluride](http://tinyurl.com/talk-tel
 ---
 layout: false
 
-OUTLINE?
+.left-column[
+## Outline
+]
+.right-column[
+#### Coupled cluster theory
+#### The diagrammatic approach
+#### Stochastic coupled cluster
+#### Bringing it all together
+]
 
 ???
 
 ---
-layout: false
 
 ## Coupled cluster theory
 
@@ -59,9 +66,9 @@ $$
 - Wave operator is **not** unitary: `$\mathrm{e}^{-T} \neq \mathrm{e}^{T^\dagger}$`
 
 ---
-layout: false
 
-INSERT FIGURE OF MODEL CHEMISTRIES
+<p style="text-align:center;"><img src="images/model-chem.png" style="width: 50%"></p>
+<p style="clear: both;">
 
 - Size-consistent and size-extensive
 - Systematically improvable
@@ -70,7 +77,6 @@ INSERT FIGURE OF MODEL CHEMISTRIES
 ???
 
 ---
-layout: false
 
 ## Coupled cluster equations: _unlinked_
 
@@ -96,7 +102,7 @@ $$
 
 `
 $$
-\langle D_{\mathbf{n}} | H_{\mathrm{N}} |\mathrm{CC} \rangle = \Delta E_{\mathrm{CC}}\langle D_{\mathbf{n}}| D_{\mathbf{0}} \rangle
+\langle D_{\mathbf{n}} | H_{\mathrm{N}} - \Delta E_{\mathrm{CC}} |\mathrm{CC} \rangle = 0 
 $$
 `
 
@@ -109,7 +115,6 @@ $$
 - Project on excitation manifold -> Get amplitudes
 
 ---
-layout: false
 
 ## Coupled cluster equations: _linked_
 
@@ -155,20 +160,61 @@ $$
 - Project on excitation manifold -> Get amplitudes
 
 ---
-layout: false
 
 ## From `$\bar{H}_\mathrm{N}$` to diagrams
 
 - Baker-Campbell-Hausdorff expansion truncates
-- Only connected terms contribute (normal ordering!)
-- Terms can be represented by diagrams 
+
+`
+$$
+\begin{aligned}
+ \bar{H}_{\mathrm{N}} &= 
+       H_{\mathrm{N}} + 
+       [H_{\mathrm{N}}, T] +
+       \frac{1}{2!}[[H_{\mathrm{N}}, T], T] \\ &+
+       \frac{1}{3!}[[[H_{\mathrm{N}}, T], T], T] +
+       \frac{1}{4!}[[[[H_{\mathrm{N}}, T], T], T], T]
+\end{aligned}
+$$
+`
+
+- Only connected terms contribute
+
+<p style="text-align:center;"><img src="images/wick.svg" style="width: 60%"></p>
+<p style="clear: both;">
 
 ???
 
 - BCH truncates because the Hamiltonian is a two-body operator
+- normal ordering, generalised Wick's theorem
 
 ---
-layout: false
+class: split-50-50
+
+## Diagrammatic representation
+
+
+<div class="row">
+  <div class="column"></div>
+  <div class="column"></div>
+</div> 
+
+.column[
+### Excitors
+
+<p style="text-align:left;"><img src="images/excitors.png" style="width: 60%"></p>
+<p style="clear: both;">
+]
+
+.column[
+### Hamiltonian
+
+<p style="text-align:left;"><img src="images/operators.png" style="width: 120%"></p>
+<p style="clear: both;">
+]
+
+
+---
 
 ## Solving the coupled cluster equations
 
@@ -190,8 +236,8 @@ layout: false
 
 ## Size extensivity and memory cost
 
-HERE I WANT TO SHOW THE MEMORY COST GRAPH
-AND COMMENT ON HOW THIS IS DUE TO THE SIZE EXTENSIVITY NOT BEING STRICTLY ENFORCED
+<p style="text-align:center;"><img src="images/fciqmc-uccmc.png" style="width: 100%"></p>
+<p style="clear: both;">
 
 ---
 layout: false
