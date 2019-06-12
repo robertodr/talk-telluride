@@ -42,18 +42,18 @@ layout: false
 $$
 |\mathrm{CC}\rangle = \mathrm{e}^T |D_{\mathbf{0}}\rangle,
 \quad
-T = \sum_{u=1} T_u 
+T = \sum_{u=1} T_u
 $$
 `
 
 `
 $$
-T_u = 
-  \sum_{\substack{a_1\\ i_1}} t_{a_1}^{i_1}\tau_{i_1}^{a_1} + 
-  \frac{1}{4} \sum_{\substack{a_1, a_2 \\ i_1, i_2}} t_{a_1a_2}^{i_1i_2}\tau_{i_1i_2}^{a_1a_2} + 
-  \ldots + 
+T_u =
+  \sum_{\substack{a_1\\ i_1}} t^{a_1}_{i_1}\tau_{i_1}^{a_1} +
+  \frac{1}{4} \sum_{\substack{a_1, a_2 \\ i_1, i_2}} t^{a_1a_2}_{i_1i_2}\tau_{i_1i_2}^{a_1a_2} +
+  \ldots +
   \frac{1}{(u!)^2} \sum_{\substack{a_1, a_2, \ldots, a_u \\ i_1, i_2, \ldots, i_u}}
-t_{a_1a_2\ldots a_u}^{i_1i_2\ldots i_u}
+t^{a_1a_2\ldots a_u}_{i_1i_2\ldots i_u}
 \tau_{i_1i_2\ldots i_u}^{a_1a_2\ldots a_u},
 $$
 `
@@ -62,7 +62,7 @@ $$
 
 - Construct the many-electron wavefunction as a multideterminantal expansion.
 - Generate excited determinants from a single reference determinant.
-- Excitations 
+- Excitations
 - Wave operator is **not** unitary: `$\mathrm{e}^{-T} \neq \mathrm{e}^{T^\dagger}$`
 
 ---
@@ -80,6 +80,7 @@ $$
 
 ## Coupled cluster equations: _unlinked_
 
+<div class="imageWrapper">
 `
 $$
 H_{\mathrm{N}}|\mathrm{CC} \rangle = \Delta E_{\mathrm{CC}}| \mathrm{CC} \rangle
@@ -92,7 +93,7 @@ Assume _intermediate normalization_ `$ \langle D_{\mathbf{0}}| \mathrm{CC} \rang
 
 `
 $$
-\langle D_{\mathbf{0}} | H_{\mathrm{N}} |\mathrm{CC} \rangle = 
+\langle D_{\mathbf{0}} | H_{\mathrm{N}} |\mathrm{CC} \rangle =
 \langle D_{\mathbf{0}} | H_{\mathrm{N}} (T_2 + T_1 + \frac{1}{2}T_1^{2})|D_\mathbf{0} \rangle =
 \Delta E_{\mathrm{CC}}
 $$
@@ -102,11 +103,15 @@ $$
 
 `
 $$
-\langle D_{\mathbf{n}} | H_{\mathrm{N}} - \Delta E_{\mathrm{CC}} |\mathrm{CC} \rangle = 0 
+\langle D_{\mathbf{n}} | H_{\mathrm{N}} - \Delta E_{\mathrm{CC}} |\mathrm{CC} \rangle = 0
 $$
 `
 
 - Size-extensive order-by-order, _not_ term-by-term
+
+--
+  <img class="overlayImage" src="images/the-pink-book.jpg" style="width: 60%" align="center">
+</div>
 
 ???
 
@@ -168,8 +173,8 @@ $$
 `
 $$
 \begin{aligned}
- \bar{H}_{\mathrm{N}} &= 
-       H_{\mathrm{N}} + 
+ \bar{H}_{\mathrm{N}} &=
+       H_{\mathrm{N}} +
        [H_{\mathrm{N}}, T] +
        \frac{1}{2!}[[H_{\mathrm{N}}, T], T] \\ &+
        \frac{1}{3!}[[[H_{\mathrm{N}}, T], T], T] +
@@ -197,7 +202,7 @@ class: split-50-50
 <div class="row">
   <div class="column"></div>
   <div class="column"></div>
-</div> 
+</div>
 
 .column[
 ### Excitors
@@ -213,342 +218,209 @@ class: split-50-50
 <p style="clear: both;">
 ]
 
+???
+
+- Hole and particle lines
+- Hamiltonian pieces
+
+---
+class: split-50-50
+
+## Diagrammatic representation, contd.
+
+<div class="row">
+  <div class="column"></div>
+  <div class="column"></div>
+</div>
+
+.column[
+### Excitors
+
+<p style="text-align:left;"><img src="images/colored_excitors.png" style="width: 80%"></p>
+<p style="clear: both;">
+]
+
+.column[
+### Hamiltonian
+
+<p style="text-align:left;"><img src="images/operators.png" style="width: 120%"></p>
+<p style="clear: both;">
+]
+
+---
+
+<p style="text-align:left;"><img src="images/FT1.png" style="width: 90%"></p>
+<p style="clear: both;">
+
+<p style="text-align:left;"><img src="images/colored_FT1.png" style="width: 90%"></p>
+<p style="clear: both;">
+
+<p style="text-align:left;"><img src="images/FT1D0.png" style="width: 100%"></p>
+<p style="clear: both;">
+
+???
+
+- We represent contractions with connecting lines
+- Internal _vs_ external lines. The former are summed over.
+- Loops, equivalent lines, signs, permutations
 
 ---
 
 ## Solving the coupled cluster equations
 
-SHOW ALGORITHM.
-HERE I WANT TO POINT OUT THE USE OF THE RESIDUAL AND PRECONDITIONING
+- Derive equations from diagrams
+- Factorise nonlinear terms
+
+<p style="text-align:left;"><img src="images/diagrams_and_equations.png" style="width: 100%"></p>
+<p style="clear: both;">
 
 ???
 
----
-layout: false
-
-## From deterministic to stochastic
-
-HERE I WANT TO SHOW HOW WE CAN DO CCMC USING UNLINKED
-THAT LINKED IS HARD
+- An explosion of terms, can be automated, but factorisation is nontrivial
+- Dense algebra, nontrivial to parallelise
 
 ---
 layout: false
 
+## From deterministic to stochastic.red[<sup>1</sup>]
+
+- Finite-different imaginary-time propagation
+
+`
+$$
+| \Psi(\tau+\delta\tau) \rangle = [1 - \delta\tau(H - S)] | \Psi(\tau) \rangle
+$$
+`
+
+- Modified CC Ansatz
+
+`
+$$
+| \mathrm{CCMC} \rangle = N_{0}\mathrm{e}^{\frac{T^\prime}{N_0}} |D_{\mathbf{0}}\rangle
+$$
+`
+
+where `$ \langle D_{\mathbf{0}}| \mathrm{CCMC}(\tau) \rangle = N_0(\tau)$`
+
+- _Unlinked_ dynamic equation
+
+`
+$$
+t_{\mathbf{n}}(\tau+\delta\tau) = t_{\mathbf{n}}(\tau) - \delta\tau
+  \langle D_{\mathbf{n}} | H - S | \mathrm{CCMC}(\tau) \rangle
+$$
+`
+
+.footnote-cite[.red[<sup>1</sup>] Thom, A. J. W. _Phys. Rev. Lett._ (2010), **105**, 263004]
+
+???
+
+- Sample the wavefunction
+- Sample action of Hamiltonian
+- Whereas results will be size-extensive and consistent, terms to sample may
+not scale linearly with system size, even for perfectly noninteracting systems.
+
+---
 ## Size extensivity and memory cost
 
 <p style="text-align:center;"><img src="images/fciqmc-uccmc.png" style="width: 100%"></p>
 <p style="clear: both;">
 
----
-layout: false
+???
 
+- These are noninteracting replicas of Be atoms. Easy system.
+- Cost is emphatically growing faster than linear.
+- Why so? We are sampling terms that cancel out exactly in the end, but we're
+still doing that part of the work and using memory for it.
+
+---
 ## Learning new tricks from an old dog
 
-EVALUATE RESIDUAL STOCHASTICALLY USING DIAGRAMS 
+- Imaginary-time Schrödinger equation.red[<sup>2</sup>]
+`
+$$
+\frac{\mathrm{d}}{\mathrm{d}\tau} | \mathrm{CC} \rangle = -H | \mathrm{CC} \rangle
+$$
+`
+
+- _Constant_ intermediate normalization
+`
+$$
+\frac{\mathrm{d}t_{\mathbf{n}}}{\mathrm{d}\tau} = - \langle D_{\mathbf{n}} | \bar{H}_{\mathrm{N}}(\tau) | D_\mathbf{0} \rangle
+$$
+`
+
+- Finite difference
+`
+$$
+t_{\mathbf{n}}(\tau+\delta\tau) = t_{\mathbf{n}}(\tau) - \delta\tau\langle D_{\mathbf{n}} | \bar{H}_{\mathrm{N}}(\tau) | D_\mathbf{0} \rangle
+$$
+`
+
+.footnote-cite[.red[<sup>2</sup>] Pigg, D. A.; Hagen, G.; Nam, H.; Papenbrock, T. _Phys. Rev. C Nucl. Phys._ (2012), **86**, 014308]
+
+???
+
+- Use the linked formulation, because terms are size-extensive by construction
+- Rather than sample the commutator expansion, as done by Franklin _et al._,
+enforce connectedness by using diagrammatic techniques.
 
 ---
-layout: false
+## Diagrammatic Coupled Cluster Monte Carlo.red[<sup>3</sup>]
 
-## Extensible
+`
+$$
+t_{\mathbf{n}}(\tau+\delta\tau) = t_{\mathbf{n}}(\tau) - \delta\tau\textcolor{red}{\langle D_{\mathbf{n}} | \bar{H}_{\mathrm{N}}(\tau) | D_\mathbf{0} \rangle}
+$$
+`
 
-<p style="text-align:left;"><img src="images/diagccmc/frame00.png" style="width: 110%;"/></p>
+### Idea and Plan
+
+- The _residual_ integral `$\textcolor{red}{\langle D_{\mathbf{n}} | \bar{H}_{\mathrm{N}}(\tau) | D_\mathbf{0} \rangle} = \sum \mathrm{diagrams}$`
+- Build diagrams on the fly, _stochastically_
+- _Stochastic_ rounding of amplitudes.
+
+<p style="text-align:center;"><img src="images/propagate.png" style="width: 70%"></p>
 <p style="clear: both;">
 
 ???
 
+- The red terms is a sum of diagrams. We can devise an algorithm to sample this
+integral by building diagrams on the fly
+- Stochastic rounding ensures sparse representation.
+- Additionally this can be interpreted on par with deterministic approaches!
+
+.footnote-cite[.red[<sup>3</sup>] Scott, C. J. C.; Di Remigio, R.; Crawford, T. D.; Thom, A. J. W. _J. Phys. Chem. Lett._ (2019), **10**, 925]
+
 ---
-count: false
-layout: false
 
-## Extensible
-
-<p style="text-align:left;"><img src="images/diagccmc/frame01.png" style="width: 110%;"/></p>
+<p style="text-align:center;"><img src="images/fast-algorithm.gif" style="width: 100%"></p>
 <p style="clear: both;">
 
-???
+.footnote-cite[Animation courtesy Katia Di Antonio]
 
 ---
-count: false
-layout: false
+## Size extensivity and memory cost, contd.
 
-## Extensible
-
-<p style="text-align:left;"><img src="images/diagccmc/frame02.png" style="width: 110%;"/></p>
-<p style="clear: both;">
-
-???
-
----
-count: false
-layout: false
-
-## Extensible
-
-<p style="text-align:left;"><img src="images/diagccmc/frame03.png" style="width: 110%;"/></p>
-<p style="clear: both;">
-
-???
-
----
-count: false
-layout: false
-
-## Extensible
-
-<p style="text-align:left;"><img src="images/diagccmc/frame04.png" style="width: 110%;"/></p>
-<p style="clear: both;">
-
-???
-
----
-count: false
-layout: false
-
-## Extensible
-
-<p style="text-align:left;"><img src="images/diagccmc/frame05.png" style="width: 110%;"/></p>
-<p style="clear: both;">
-
-???
-
----
-count: false
-layout: false
-
-## Extensible
-
-<p style="text-align:left;"><img src="images/diagccmc/frame06.png" style="width: 110%;"/></p>
-<p style="clear: both;">
-
-???
-
----
-count: false
-layout: false
-
-## Extensible
-
-<p style="text-align:left;"><img src="images/diagccmc/frame07.png" style="width: 110%;"/></p>
-<p style="clear: both;">
-
-???
-
----
-count: false
-layout: false
-
-## Extensible
-
-<p style="text-align:left;"><img src="images/diagccmc/frame08.png" style="width: 110%;"/></p>
-<p style="clear: both;">
-
-???
-
----
-count: false
-layout: false
-
-## Extensible
-
-<p style="text-align:left;"><img src="images/diagccmc/frame09.png" style="width: 110%;"/></p>
-<p style="clear: both;">
-
-???
-
----
-count: false
-layout: false
-
-## Extensible
-
-<p style="text-align:left;"><img src="images/diagccmc/frame10.png" style="width: 110%;"/></p>
-<p style="clear: both;">
-
-???
-
----
-count: false
-layout: false
-
-## Extensible
-
-<p style="text-align:left;"><img src="images/diagccmc/frame11.png" style="width: 110%;"/></p>
-<p style="clear: both;">
-
-???
-
----
-layout: false
-
-## Modular
-### Do One Thing, Do It Well
-<p style="text-align:center;"><img src="images/lego-once.gif" style="width: 100%"></p>
-<p style="clear: both;">
-
-???
-
-- Fast-paced development cycles can only occur within a clear software structure
-- Delimit capabilities, concerns, results
-- Modularity can help create such a structure
-- A LEGO-like structure can enhance our capabilities to reason about complex software workflows.
-- Assemble, de-assemble, re-assemble is easier with standalone modules.
-
----
-layout: false
-
-## Sustainable
-### Software Reuse for a Better Life
-
-<p style="text-align:center;"><img src="images/reinvent-wheel.gif" style="width: 100%;"/></p>
-<p style="clear: both;">
-
-.footnote-cite[Source: [IBM Big Data & Analytics Hub](http://www.ibmbigdatahub.com/blog/dont-reinvent-wheel-increase-productivity-strategic-reuse)]
-
-???
-
-- Reinventing the wheel is bad
-- Build small, well-documented software components
-- Reuse components in different contexts
-
----
-
-## The Problem(s) with Input Parsing
-
-- Proliferation of formats
-- Difficult to ensure correctness
-- Error reporting can be confusing
-- Hard to compose
-- Documentation quickly outdated or incomplete
-
-<p style="text-align:center;"><img src="images/confused-dude.gif" style="width: 50%"></p>
+<p style="text-align:center"><img src="images/diagccmc-nstates.png" style="width: 100%"></p>
 <p style="clear: both;">
 
 ---
-layout: false
-class: split-50-50
+## CPU cost
 
-## parselglossy: generic input parsing, speaking in tongues
-
-Separate _syntax_ and _semantics_
-
-.column[
-```
-parselglossy --help
-
-Usage: parselglossy [OPTIONS] COMMAND [ARGS]...
-
-  Console script for parselglossy.
-
-Options:
-  --version  Show the version and exit.
-  --help     Show this message and exit.
-
-Commands:
-  doc       Generate documentation from validation template.
-  lex       Run lexer and dump intermediate representation to JSON.
-  parse     Parse input file.
-  validate  Validate intermediate representation into final representation.
-```
-]
-.column[
-<p style="text-align:center;"><img src="images/parseltongue.jpg" style="width: 35%;"/></p>
-<p style="clear: both;">
-]
-
-- [github.com/dev-cafe/parselglossy](https://github.com/dev-cafe/parselglossy)
-- [parselglossy.readthedocs.io](https://parselglossy.readthedocs.io)
-- `pip install parselglossy`
-
----
-layout: false
-
-```
-parselglossy parse input.inp --template template.yml --outfile fr.json
-```
-
-<p style="text-align:center;"><img src="images/structure.png" style="width: 100%;"/></p>
+<p style="text-align:center;"><img src="images/Be_replica_nattempts.png" style="width: 100%"></p>
 <p style="clear: both;">
 
 ---
-layout: false
+## Locality
 
-## Tokenization: how _any_ correct input _looks_
-
-<p style="text-align:center;"><img src="images/tokenization.png" style="width: 100%;"/></p>
+<p style="vertical-align:text-top"><img src="images/He_pentamer_nstates_dissoc.png" style="width: 100%"></p>
 <p style="clear: both;">
 
 ---
-layout: false
-
-## Validation: what correct input _must contain_
-
-<p style="text-align:center;"><img src="images/template.png" style="width: 100%;"/></p>
-<p style="clear: both;">
-
----
-layout: false
-
-<p style="text-align:center;"><img src="images/validation.png" style="width: 100%;"/></p>
-<p style="clear: both;">
-
----
-layout: false
-
-## Bonus: autogenerate documentation
-
-```
-parselglossy doc template.yml --outfile input.rst
-```
-
-<p style="text-align:right;"><img src="images/documentation.png" style="width: 60%;"/></p>
-<p style="clear: both;">
-
----
-layout: false
-
-## Conclusions
-
-[github.com/dev-cafe/parselglossy](https://github.com/dev-cafe/parselglossy)
-
-- A library for input parsing
-- Separation of syntax and semantics
-- Allows composable parsers
-- Automatic generation of documentation
-
-```
-parselglossy --help
-
-Usage: parselglossy [OPTIONS] COMMAND [ARGS]...
-
-  Console script for parselglossy.
-
-Options:
-  --version  Show the version and exit.
-  --help     Show this message and exit.
-
-Commands:
-  doc       Generate documentation from validation template.
-  lex       Run lexer and dump intermediate representation to JSON.
-  parse     Parse input file.
-  validate  Validate intermediate representation into final representation.
-```
-
----
-layout: false
-
 ## Acknowledgements
 
 <p style="text-align:center;"><img src="images/thanks.png" style="width: 100%"></p>
-<p style="clear: both;">
-
----
-layout: false
-
-## Commercial
-
-All examples online [github.com/dev-cafe/cmake-cookbook](https://github.com/dev-cafe/cmake-cookbook)
-
-<p style="text-align:center;"><img src="images/cmake-cookbook-cover.png" style="width: 50%"></p>
 <p style="clear: both;">
 
 ---

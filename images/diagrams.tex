@@ -38,7 +38,7 @@
 
 \begin{equation*}
   \begin{aligned}
-    \Phi  
+    \Phi
     &=
     \diagram{
       \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
@@ -47,7 +47,7 @@
       \draw[->-] (g2) to node[left] {}++(0,+0.5);
       \draw[-<-] (g2) to node[left] {}++(0,-0.5);
     }
-    + 
+    +
     \diagram{
       \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
       \draw[-<-] (g1) to node[left] {} ++(0,+0.5);
@@ -63,14 +63,14 @@
       \draw[-<-] (g2) to node[left] {}++(0,+0.5);
       \draw[->-] (g2) to node[left] {}++(0,-0.5);
     } \\
-    &+ 
+    &+
     \diagram{
       \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
       \draw[->-] (g1) to node[left] {} ++(0,+0.5);
       \draw[-<-] (g1) to node[left] {}++(0,-0.5);
       \draw[-<-] (g2) to node[left] {}++(-0.25,+0.5);
       \draw[->-] (g2) to node[right] {}++(0.25,+0.5);
-    } 
+    }
     +
     \diagram{
       \interaction{2}{g}{(0,0)}{ddot=white}{flexdotted};
@@ -148,6 +148,42 @@
 \end{equation*}
 
 \begin{equation*}
+  T_{1} =
+  \diagram{
+    \interaction{1}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-, red!70] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-, blue!70] (ta1) to node[right] {} ++(0.25, 1.0);
+  }
+  = t_{\textcolor{blue}{i}}^{\textcolor{red}{a}}\tau_{\textcolor{blue}{i}}^{\textcolor{red}{a}}
+\end{equation*}
+
+\begin{equation*}
+  T_{2} =
+  \diagram{
+    \interaction{2}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-, red!70] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-, blue!70] (ta1) to node[right] {} ++(0.25, 1.0);
+    \draw[->-, red!70] (ta2) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-, blue!70] (ta2) to node[right] {} ++(0.25, 1.0);
+  }
+  = \frac{1}{(2!)^2} t_{\textcolor{blue}{ij}}^{\textcolor{red}{ab}}\tau_{\textcolor{blue}{ij}}^{\textcolor{red}{ab}}
+\end{equation*}
+
+\begin{equation*}
+  T_{3} =
+  \diagram{
+    \interaction{3}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-, red!70] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-, blue!70] (ta1) to node[right] {} ++(0.25, 1.0);
+    \draw[->-, red!70] (ta2) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-, blue!70] (ta2) to node[right] {} ++(0.25, 1.0);
+    \draw[->-, red!70] (ta3) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-, blue!70] (ta3) to node[right] {} ++(0.25, 1.0);
+  }
+  = \frac{1}{(3!)^2} t_{\textcolor{blue}{ijk}}^{\textcolor{red}{abc}}\tau_{\textcolor{blue}{ijk}}^{\textcolor{red}{abc}}
+\end{equation*}
+
+\begin{equation*}
   \contraction{}{F}{}{T_{1}}
   FT_{1}
   =
@@ -192,6 +228,84 @@
 \end{equation*}
 
 \begin{equation*}
+  \contraction{}{F}{}{T_{1}}
+  FT_{1}
+  =
+  \diagram{
+    \interaction{1}{ta}{(-0.25, -0.5)}{ddot}{overhang};
+    \draw[-<-, semithick, orange!70] (ta1) to node[left] {} ++(-0.5, 1.0);
+    \draw (0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[->-, semithick, purple!70] (ta1) to (f1) {};
+    \draw[->-, semithick, orange!70] (f1) to node[left] {} ++(-0.25, 0.5);
+  }
+  +
+  \diagram{
+    \interaction{1}{ta}{(0.25, -0.5)}{ddot}{overhang};
+    \draw[->-, semithick, orange!70] (ta1) to node[right] {} ++(+0.5, 1.0);
+    \draw (-0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[-<-, semithick, purple!70] (ta1) to (f1) {};
+    \draw[-<-, semithick, orange!70] (f1) to node[left] {} ++(0.25, 0.5);
+  }
+  +
+  \diagram{
+    \interaction{1}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw (0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[-<-, bend left, purple!70] (ta1) to (f1) {};
+    \draw[->-, bend right, purple!70] (ta1) to (f1) {};
+  }
+  +
+  \diagram{
+    \interaction{1}{ta}{(-0.25, -0.5)}{ddot}{overhang};
+    \draw[-<-, semithick, orange!70] (ta1) to node[left] {} ++(-0.5, 1.0);
+    \draw (0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[->-, semithick, purple!70] (ta1) to (f1) {};
+    \draw[->-, semithick, orange!70] (f1) to node[right] {} ++(+0.25, -0.5);
+  }
+  +
+  \diagram{
+    \interaction{1}{ta}{(0.25, -0.5)}{ddot}{overhang};
+    \draw[->-, semithick, orange!70] (ta1) to node[right] {} ++(+0.5, 1.0);
+    \draw (-0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[-<-, semithick, purple!70] (ta1) to (f1) {};
+    \draw[-<-, semithick, orange!70] (f1) to node[left] {} ++(-0.25, -0.5);
+  }
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+  \contraction{}{F}{}{T_{1}}
+  FT_{1}|D_{\mathbf{0}}\rangle
+  &=
+  \diagram{
+    \interaction{1}{ta}{(-0.25, -0.5)}{ddot}{overhang};
+    \draw[-<-, semithick, orange!70] (ta1) to node[left] {} ++(-0.5, 1.0);
+    \draw (0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[->-, semithick, purple!70] (ta1) to (f1) {};
+    \draw[->-, semithick, orange!70] (f1) to node[left] {} ++(-0.25, 0.5);
+  }
+  +
+  \diagram{
+    \interaction{1}{ta}{(0.25, -0.5)}{ddot}{overhang};
+    \draw[->-, semithick, orange!70] (ta1) to node[right] {} ++(+0.5, 1.0);
+    \draw (-0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[-<-, semithick, purple!70] (ta1) to (f1) {};
+    \draw[-<-, semithick, orange!70] (f1) to node[left] {} ++(0.25, 0.5);
+  }
+  +
+  \diagram{
+    \interaction{1}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw (0.5, 0) node[circlex] (f) {} -- (0, 0) node[ddot=white] (f1) {};
+    \draw[-<-, bend left, purple!70] (ta1) to (f1) {};
+    \draw[->-, bend right, purple!70] (ta1) to (f1) {};
+  } \\
+  &=
+    f_{\textcolor{orange}{a}}^{\textcolor{purple}{b}}t_{\textcolor{orange}{i}}^{\textcolor{purple}{b}}\tau_{\textcolor{orange}{i}}^{\textcolor{orange}{a}}
+  - f_{\textcolor{purple}{j}}^{\textcolor{orange}{i}}t_{\textcolor{purple}{j}}^{\textcolor{orange}{a}}\tau_{\textcolor{orange}{i}}^{\textcolor{orange}{a}}
+  + f_{\textcolor{purple}{i}}^{\textcolor{purple}{a}}t_{\textcolor{purple}{i}}^{\textcolor{purple}{a}}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
 \diagram{
   \interaction{3}{ta}{(0, -0.5)}{ddot}{overhang};
   \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
@@ -208,16 +322,95 @@
   \interaction{3}{tc}{(2, -0.5)}{ddot}{overhang};
   \draw[flexdotted] (0.5, 0.0) node[ddot=white] (g1) {} to (2, 0.0) node[ddot=white] (g2) {};
   \draw[semithick, -<-] (ta1) to node[left] {} ++(-0.25, 1.0);
-  \draw[semithick, ->-] (ta1) to node[left] {} (g1);                                                   
+  \draw[semithick, ->-] (ta1) to node[left] {} (g1);
   \draw[semithick, ->-] (tb1) to node[right] {} ++(0.25, 1.0);
-  \draw[semithick, -<-] (tb1) to node[right] {} (g1);                                                   
-  \draw[semithick, bend left, -<-] (tc1) to node[right] {} (g2);  
-  \draw[semithick, bend right, ->-] (tc1) to node[right] {} (g2);  
-  \draw[semithick, ->-] (tc2) to node[right] {} ++(0.25, 1.0);  
-  \draw[semithick, -<-] (tc2) to node[right] {} ++(-0.25, 1.0);  
-  \draw[semithick, ->-] (tc3) to node[right] {} ++(0.25, 1.0);  
-  \draw[semithick, -<-] (tc3) to node[right] {} ++(-0.25, 1.0);  
+  \draw[semithick, -<-] (tb1) to node[right] {} (g1);
+  \draw[semithick, bend left, -<-] (tc1) to node[right] {} (g2);
+  \draw[semithick, bend right, ->-] (tc1) to node[right] {} (g2);
+  \draw[semithick, ->-] (tc2) to node[right] {} ++(0.25, 1.0);
+  \draw[semithick, -<-] (tc2) to node[right] {} ++(-0.25, 1.0);
+  \draw[semithick, ->-] (tc3) to node[right] {} ++(0.25, 1.0);
+  \draw[semithick, -<-] (tc3) to node[right] {} ++(-0.25, 1.0);
 }
+\end{equation*}
+
+\begin{equation*}
+  \diagram{
+    \interaction{1}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+  }
+  \longleftarrow
+  \diagram{
+    \interaction{1}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+  }
+  - \delta\tau
+  \diagram{
+    \interaction{1}{ta}{(0, -0.5)}{ddot=white}{};
+    \draw[wiggly] (0, -0.5) node (g1) {} to (0.75, -0.5) node (g2) {};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+  }
+\end{equation*}
+
+\begin{equation*}
+  \diagram{
+    \interaction{2}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta2) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta2) to node[right] {} ++(0.25, 1.0);
+  }
+  \longleftarrow
+  \diagram{
+    \interaction{2}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta2) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta2) to node[right] {} ++(0.25, 1.0);
+  }
+  - \delta\tau
+  \diagram{
+    \interaction{2}{ta}{(0, -0.5)}{ddot=white}{wiggly};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta2) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta2) to node[right] {} ++(0.25, 1.0);
+  }
+\end{equation*}
+
+\begin{equation*}
+  \diagram{
+    \interaction{3}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta2) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta2) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta3) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta3) to node[right] {} ++(0.25, 1.0);
+  }
+  \longleftarrow
+  \diagram{
+    \interaction{3}{ta}{(0, -0.5)}{ddot}{overhang};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta2) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta2) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta3) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta3) to node[right] {} ++(0.25, 1.0);
+  }
+  - \delta\tau
+  \diagram{
+    \interaction{3}{ta}{(0, -0.5)}{ddot=white}{wiggly};
+    \draw[->-] (ta1) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta1) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta2) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta2) to node[right] {} ++(0.25, 1.0);
+    \draw[->-] (ta3) to node[left] {} ++(-0.25, 1.0);
+    \draw[-<-] (ta3) to node[right] {} ++(0.25, 1.0);
+  }
 \end{equation*}
 
 \end{document}
