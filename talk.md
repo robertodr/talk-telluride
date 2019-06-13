@@ -194,6 +194,14 @@ $$
 - normal ordering, generalised Wick's theorem
 
 ---
+count: false
+
+## From `$\bar{H}_\mathrm{N}$` to diagrams
+
+<p style="text-align:center;"><img src="images/bartlett-shavitt.jpg" style="width: 50%"></p>
+<p style="clear: both;">
+
+---
 class: split-50-50
 
 ## Diagrammatic representation
